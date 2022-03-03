@@ -1,0 +1,19 @@
+const Intern = require("../Lib/Intern");
+
+test("Sets school through constructor", () => {
+  const testValue = "UOB";
+  const e = new Intern("Foo", 1, "test@test.com", testValue);
+  expect(e.school).toBe(testValue);
+});
+
+test("getRole() should return \"Intern\"", () => {
+  const testValue = "Intern";
+  const e = new Intern("Foo", 1, "test@test.com", "GitHubUser");
+  expect(e.getRole()).toBe(testValue);
+});
+
+test("Can get school via getSchool()", () => {
+  const testValue = "UOB";
+  const e = new Engineer("Foo", 1, "test@test.com", testValue);
+  expect(e.school()).toBe(testValue);
+});
