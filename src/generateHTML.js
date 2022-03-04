@@ -66,10 +66,43 @@ const generateTeamMembersHtml = (teamMembers) => {
     
   };
 
+  generateHTML = (data) => {
+
+    // array for cards 
+    pageArray = []; 
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole(); 
+
+
+        // call manager function
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            pageArray.push(managerCard);
+        }
+
+        // call engineer function
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            pageArray.push(engineerCard);
+        }
+
+        // call intern function 
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+
+            pageArray.push(internCard);
+        }
+        
+    }
+
 
   // loop over the array of team members
 
-  
+
 
   // generateHTML = (data) => {
 
