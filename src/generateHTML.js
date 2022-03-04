@@ -63,46 +63,15 @@ const generateTeamMembersHtml = (teamMembers) => {
     </div>
 </div>
     `
-    //a string literal returned with the intern data
+    
   };
 
 
   // loop over the array of team members
 
-  generateHTML = (data) => {
+  
 
-    // array for cards 
-    pageArray = []; 
-
-    for (let i = 0; i < data.length; i++) {
-        const employee = data[i];
-        const role = employee.getRole(); 
-
-
-        // call manager function
-        if (role === 'Manager') {
-            const managerCard = generateManager(employee);
-
-            pageArray.push(managerCard);
-        }
-
-        // call engineer function
-        if (role === 'Engineer') {
-            const engineerCard = generateEngineer(employee);
-
-            pageArray.push(engineerCard);
-        }
-
-        // call intern function 
-        if (role === 'Intern') {
-            const internCard = generateIntern(employee);
-
-            pageArray.push(internCard);
-        }
-        
-    }
-
-
+  // generateHTML = (data) => {
 
 
   // if team member manager -> generate Manager
