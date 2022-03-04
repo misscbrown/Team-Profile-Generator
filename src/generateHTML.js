@@ -66,38 +66,38 @@ const generateTeamMembersHtml = (teamMembers) => {
     
   };
 
-  generateHTML = (data) => {
+  // generateHTML = (data) => {
 
-    // array for cards 
-    pageArray = []; 
+  //   // array for cards 
+  //   pageArray = []; 
 
-    for (let i = 0; i < data.length; i++) {
-        const employee = data[i];
-        const role = employee.getRole(); 
+  //   for (let i = 0; i < data.length; i++) {
+  //       const employee = data[i];
+  //       const role = employee.getRole(); 
 
 
-        // call manager function
-        if (role === 'Manager') {
-            const managerCard = generateManager(employee);
+  //       // call manager function
+  //       if (role === 'Manager') {
+  //           const managerCard = generateManager(employee);
 
-            pageArray.push(managerCard);
-        }
+  //           pageArray.push(managerCard);
+  //       }
 
-        // call engineer function
-        if (role === 'Engineer') {
-            const engineerCard = generateEngineer(employee);
+  //       // call engineer function
+  //       if (role === 'Engineer') {
+  //           const engineerCard = generateEngineer(employee);
 
-            pageArray.push(engineerCard);
-        }
+  //           pageArray.push(engineerCard);
+  //       }
 
-        // call intern function 
-        if (role === 'Intern') {
-            const internCard = generateIntern(employee);
+  //       // call intern function 
+  //       if (role === 'Intern') {
+  //           const internCard = generateIntern(employee);
 
-            pageArray.push(internCard);
-        }
+  //           pageArray.push(internCard);
+  //       }
         
-    }
+  //   }
 
 
   // loop over the array of team members
@@ -120,6 +120,10 @@ const generateTeamMembersHtml = (teamMembers) => {
 };
 
 // Function which creates basic html and calls generateTeamMembersHtml function
+
+const formatData = (data) => {
+  return (data.map(people => ))
+}
 
 module.exports = (teamMembers) => {
   return `
