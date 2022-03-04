@@ -48,8 +48,10 @@ function init() {
           answers.managerEmail,
           answers.managerOfficeNumber
         );
-        console.log(manager);
+        manager.title = "manager";
+        console.log(Manager);
         teamMembers.push(manager);
+        console.log(manager);
         chooseNextTeamMember();
       });
 
@@ -89,6 +91,8 @@ function init() {
         answers.engineerGithub
       );
       console.log(engineer);
+      engineer.title = "engineer";
+
       teamMembers.push(engineer);
       chooseNextTeamMember();
     });
@@ -127,6 +131,7 @@ function init() {
         answers.internEmail,
         answers.internSchool
       );
+      intern.title = "intern";
       console.log(intern);
       teamMembers.push(intern);
       chooseNextTeamMember();
