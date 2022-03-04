@@ -1,129 +1,38 @@
 // Function responsible for taking our array of team members and creating html for each
+
 const generateTeamMembersHtml = (teamMembers) => {
-
-    const teamString = ''; 
-
-  //function for generating html if manager
-  const generateManager = (manager) => {
-    //a string literal returned with the manager data
-    
-    const managerHTML = `
-    <div class="col-4 mt-4">
-        <div class="card h-100">
-            <div class="card-header">
-                <h3>${manager.name}</h3>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
-            </div>
-            <div class="card-body">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number: ${manager.officeNumber}</p>
-            </div>
-        </div>
-    </div> 
-    `
-    // append your new string to the teamString on line 4
-
-  };
-
-  //function for generating html if engineer
-  const generateEngineer = (engineer) => {
-    //a string literal returned with the engineer data
-    `
-    <div class="col-4 mt-4">
-        <div class="card h-100">
-            <div class="card-header">
-                <h3>${engineer.name}</h3>
-                <h4>Engineer</h4><i class="material-icons">laptop_mac</i>
-            </div>
-            <div class="card-body">
-                <p class="id">ID: ${engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
-            </div>
-        </div>
-    </div>
-    `
-  };
-
-  //function for generating html if intern
-  const generateIntern = (intern) => {
-    `
-    <div class="col-4 mt-4">
-        <div class="card h-100">
-            <div class="card-header">
-                <h3>${intern.name}</h3>
-                <h4>Intern</h4><i class="material-icons">assignment_ind</i>
-            </div>
-            <div class="card-body">
-                <p class="id">ID: ${intern.id}</p>
-                <p class="email">Email:<a href="mailto:${intern.email}">${intern.email}</a></p>
-                <p class="school">School: ${intern.school}</p>
-            </div>
-    </div>
-</div>
-    `
-    
-  };
-
-  // generateHTML = (data) => {
-
-  //   // array for cards 
-  //   pageArray = []; 
-
-  //   for (let i = 0; i < data.length; i++) {
-  //       const employee = data[i];
-  //       const role = employee.getRole(); 
-
-
-  //       // call manager function
-  //       if (role === 'Manager') {
-  //           const managerCard = generateManager(employee);
-
-  //           pageArray.push(managerCard);
-  //       }
-
-  //       // call engineer function
-  //       if (role === 'Engineer') {
-  //           const engineerCard = generateEngineer(employee);
-
-  //           pageArray.push(engineerCard);
-  //       }
-
-  //       // call intern function 
-  //       if (role === 'Intern') {
-  //           const internCard = generateIntern(employee);
-
-  //           pageArray.push(internCard);
-  //       }
-        
-  //   }
-
-
-  // loop over the array of team members
-
-
-
-  // generateHTML = (data) => {
-
-
-  // if team member manager -> generate Manager
-
-  //member = intern => generateIntern
-
-  //member = engineer => generate engineer
-
-
-
-
-  return teamString; 
+  //   console.log("xxxx", teamMembers);
+  //   debugger;
 };
-
 // Function which creates basic html and calls generateTeamMembersHtml function
-
 const formatData = (data) => {
-  return (data.map(people => ))
-}
+  return data.map((employee) => {
+    let x = "Boss";
+    let y = employee.officeNumber;
+    if (employee.title == "intern") {
+      console.log("employee", employee);
+      x = "school name";
+      y = employee.school;
+    }
+    if (employee.title == "engineer") {
+      x = "Github Account";
+      y = employee.github;
+    }
+    return ` <div class="col-4 mt-4">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h3>${employee.name}</h3>
+                    <h4>${employee.title}</h4><i class="material-icons">content_paste</i>
+                </div>
+                <div class="card-body">
+                    <p class="id">ID: ${employee.id}</p>
+                    <p class="email">Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
+                    <p class="office">${x}: ${y}</p>
+                </div>
+            </div>
+        </div> `;
+  });
+};
 
 module.exports = (teamMembers) => {
   return `
@@ -134,9 +43,14 @@ module.exports = (teamMembers) => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    ${generateTeamMembersHtml(teamMembers)}
+    ${formatData(teamMembers)}
 </body>
 </html>
     `;
