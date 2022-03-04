@@ -142,8 +142,8 @@ function init() {
         {
           type: "list",
           name: "chosenEmployeeToAdd",
-          message: "Choose chich team member to add next... ",
-          choices: ["Add Engineer", "Add Intern", "Finnish creating team"],
+          message: "Choose which team member to add next... ",
+          choices: ["Add Engineer", "Add Intern", "Finish creating team"],
         },
       ])
       .then((choice) => {
