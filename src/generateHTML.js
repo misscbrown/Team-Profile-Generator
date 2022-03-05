@@ -35,7 +35,9 @@ const formatData = (data) => {
 };
 // Function for creating basic HTML and exporting teamMembers
 module.exports = (teamMembers) => {
-  return ` <div class="col-4 mt-4">
+  return ` 
+  <div class="row">
+  <div class="col-3 mt-4">
   <div class="card h-100">
       <div class="card-header">
           <h3>${employee.name}</h3>
@@ -47,6 +49,7 @@ module.exports = (teamMembers) => {
           <p class="office">${x}: ${y}</p>
       </div>
   </div>
+</div>
 </div> `;
 };
 ;
@@ -68,6 +71,15 @@ return `
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<nav class="navbar bg-info" id="navbar">
+              <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Syncdin Publishing</span>
+          </nav>
+          <div class="jumbotron">
+      <h1 class="display-3">Team Profile Portfolio</h1>
+      <p class="lead">All team members with titles and contact details</p>
+      <p id="currentDay" class="lead"></p>
+   </div>
+      </header>
 ${formatData(teamMembers)}
 </body>
 </html>
