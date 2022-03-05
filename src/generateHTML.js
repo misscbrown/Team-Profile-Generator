@@ -1,11 +1,11 @@
 // Function responsible for taking our array of team members and creating html for each
 
 const generateTeamMembersHtml = (teamMembers) => {
-  //   console.log("xxxx", teamMembers);
-  //   debugger;
+  
 };
 // Function which creates cards using HTML, for teamMembers
 const formatData = (data) => {
+  // Loops over the employees and returns information to the card
   return data.map((employee) => {
     let x = "Boss";
     let y = employee.officeNumber;
