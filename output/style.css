@@ -1,0 +1,12 @@
+.card-header {
+    background-color: aquamarine;
+}
+
+.jumbotron {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.col-4 {
+    align-items: center;
+}
