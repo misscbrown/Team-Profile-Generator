@@ -1,3 +1,5 @@
+// Employee class - all employees are an extension of this class
+
 class Employee {
     constructor (name, id, email) {
         this.name = name;
