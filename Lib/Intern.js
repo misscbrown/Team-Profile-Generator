@@ -10,7 +10,7 @@ class Intern extends Employee {
         this.title = intern;
     }
 
-    getGithub() {
+    getSchool() {
         return this.school;
     }
 
