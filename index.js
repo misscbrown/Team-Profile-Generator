@@ -7,7 +7,7 @@ const fs = require("fs");
 const path = require("path");
 const renderTeamHtml = require("./src/generateHTML")
 
-//Creaating path string for the output folder
+//Creating path string for the output folder
 const OUT_DIRECTORY = path.resolve(__dirname, "output")
 //Setting path for the created file
 const outputPath = path.join(OUT_DIRECTORY, 'team.html')
@@ -55,7 +55,6 @@ function init() {
         manager.title = "manager";
         console.log(Manager);
         teamMembers.push(manager);
-        console.log(manager);
         chooseNextTeamMember();
       });
 
