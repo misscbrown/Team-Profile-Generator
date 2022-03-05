@@ -4,7 +4,7 @@ const generateTeamMembersHtml = (teamMembers) => {
   //   console.log("xxxx", teamMembers);
   //   debugger;
 };
-// Function which creates basic html and calls generateTeamMembersHtml function
+// Function which creates cards using HTML, for teamMembers
 const formatData = (data) => {
   return data.map((employee) => {
     let x = "Boss";
@@ -34,6 +34,7 @@ const formatData = (data) => {
   });
 };
 
+// Function for creating basic HTML and exporting teamMembers
 module.exports = (teamMembers) => {
   return `
     <!DOCTYPE html>

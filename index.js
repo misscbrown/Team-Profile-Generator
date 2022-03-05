@@ -11,12 +11,14 @@ const renderTeamHtml = require("./src/generateHTML")
 const OUT_DIRECTORY = path.resolve(__dirname, "output")
 //Setting path for the created file
 const outputPath = path.join(OUT_DIRECTORY, 'team.html')
-
+// Empty array to push team members into
 const teamMembers = [];
 
+// init function to initialise app
 function init() {
   console.log("Application Running ....");
 
+// Using inquirer prompt to ask questions for each team member
   function addManager() {
     inquirer
       .prompt([
@@ -41,6 +43,8 @@ function init() {
           message: "What is the Office Number of this teams manager?",
         },
       ])
+
+      //Returns answers 
       .then((answers) => {
         const manager = new Manager(
           answers.managerName,
@@ -58,6 +62,7 @@ function init() {
     console.log("Adding Manager....");
   }
 
+  // Adds engineer 
   function addEngineer() {
 
     inquirer
@@ -100,6 +105,7 @@ function init() {
     console.log("Adding Engineer....");
   }
 
+  // Adds intern
   function addIntern() {
     inquirer
     .prompt([
@@ -139,6 +145,7 @@ function init() {
     console.log("Adding Intern.....");
   }
 
+  //Function for choosing next Team Member - called after each employee has been added, option to create HTML
   function chooseNextTeamMember() {
     console.log("Asking Manager what he/she wants to do next...");
 
@@ -164,6 +171,7 @@ function init() {
       });
   }
 
+  // Function for creating HTML 
   function createTeamHTML() {
     console.log("Creating HTML.......");
 
