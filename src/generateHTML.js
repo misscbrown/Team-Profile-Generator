@@ -37,7 +37,7 @@ const formatData = (data) => {
 module.exports = (teamMembers) => {
   return ` 
   <div class="row">
-  <div class="col-3 mt-4">
+  <div class="col-4 mt-4">
   <div class="card h-100">
       <div class="card-header">
           <h3>${employee.name}</h3>
